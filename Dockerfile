@@ -20,6 +20,7 @@ RUN apk update && apk upgrade \
   && apk add --no-cache ca-certificates nodejs npm \
   && apk add --no-cache --virtual .build-dependencies python2 make g++ git \
   && npm install --production=false \
+  && npm i aws-sdk \
   && apk del .build-dependencies && rm -rf /var/cache/* /tmp/npm*
 EXPOSE 8080
 EXPOSE 8765
